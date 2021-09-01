@@ -19,7 +19,7 @@ const searchClick = () => {
 const displayBook = books => {
     document.getElementById('total-search').innerText = books.numFound
     books.docs.forEach(book => {
-        console.log(book);
+        // console.log(book);
         // console.log(book.author_name)
         const cover = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
         const div = document.createElement('div');
