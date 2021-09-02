@@ -61,8 +61,8 @@ const displayBook = books => {
         div.innerHTML = `
         <div class="card">
             <div class="row g-0">
-                <div class="col-md-4 p-2">
-                    <img src=${cover} class="card-img-top" style="height: 200px;" alt="...">
+                <div class="col-md-4 p-2 " style="height: 250px;">
+                    <img src=${cover} class="img-fluid card-img-top"  alt="...">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
