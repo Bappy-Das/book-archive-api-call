@@ -9,7 +9,7 @@ const searchClick = () => {
     const text = inputText.value;
     inputText.value = '';
     // console.log(text);
-    const url = `http://openlibrary.org/search.json?q=${text}`;
+    const url = `https://openlibrary.org/search.json?q=${text}`;
     // console.log(url)
     fetch(url)
         .then(res => res.json())
