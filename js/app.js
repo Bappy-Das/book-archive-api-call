@@ -7,7 +7,7 @@ const total = document.getElementById('total-result');
 const searchClick = () => {
     const text = inputText.value;
     inputText.value = '';
-
+    displaySpin('block');
     // clean display text 
     display.textContent = '';
     total.textContent = '';
@@ -18,6 +18,8 @@ const searchClick = () => {
 }
 
 const displayBook = books => {
+
+
 
     // total search result
     const p = document.createElement('p');
@@ -79,8 +81,12 @@ const displayBook = books => {
         `;
         display.appendChild(div);
     });
+    displaySpin('none');
 }
 
+const displaySpin = displayStyle => {
+    document.getElementById('spiner').style.display = displayStyle;
+}
 
 
 const reDirectHome = () => {
