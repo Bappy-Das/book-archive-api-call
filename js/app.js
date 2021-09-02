@@ -69,7 +69,7 @@ const displayBook = books => {
                         <h5 class="">${book.title}</h5>
                         <p class="card-text">By ${book.author_name}</p>
                         <p class="card-text"><small class="text-muted">First published in ${book.first_publish_year}</small></p>
-                        <p class="card-text"><small class="text-muted">Publisher : ${book.publisher}</small></p>
+                        <p class="card-text"><small class="text-muted">Publisher : ${book.publisher[0]}</small></p>
                     </div>
                 </div>
             </div>
