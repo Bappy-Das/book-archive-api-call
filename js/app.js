@@ -42,6 +42,10 @@ const displayBook = books => {
                 <div class="error-details">
                     Sorry, The page you requested was not found!
                 </div>
+                <div>
+                    <a href="" onclick = "reDirectHome()">Back To Home Page</a>
+                </div>
+
             </div>
         </div>
         `;
@@ -50,8 +54,6 @@ const displayBook = books => {
     // get single book
     books.docs.forEach(book => {
 
-        console.log(books)
-        console.log(books.length)
         // book image
         const cover = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
 
@@ -77,4 +79,7 @@ const displayBook = books => {
         `;
         display.appendChild(div);
     });
+}
+function reDirectHome() {
+    document.location.href = "/";
 }
