@@ -1,9 +1,16 @@
 const inputText = document.getElementById('input-text');
 const display = document.getElementById('books');
+const total = document.getElementById('total-result');
+
+
 
 const searchClick = () => {
     const text = inputText.value;
     inputText.value = '';
+
+    // clean display text 
+    display.textContent = '';
+    total.textContent = '';
     const url = `https://openlibrary.org/search.json?q=${text}`;
     fetch(url)
         .then(res => res.json())
@@ -13,8 +20,6 @@ const searchClick = () => {
 const displayBook = books => {
 
     // total search result
-    const total = document.getElementById('total-result');
-    total.textContent = '';
     const p = document.createElement('p');
     p.innerHTML = `
         <div class="card w-75 mx-auto">
@@ -27,9 +32,6 @@ const displayBook = books => {
     
     `;
     total.appendChild(p);
-
-    // empty full content
-    display.textContent = '';
     // error handling
     if (books.docs.length === 0) {
         display.innerHTML = `
@@ -69,7 +71,7 @@ const displayBook = books => {
                 <div class="col-md-6">
                     <div class="card-body">
                         <h5 class="">${book.title}</h5>
-                        <p class="card-text">By ${book.author_name}</p>
+                        <p class="card-text">By ${book.author_name?.[0]}</p>
                         <p class="card-text"><small class="text-muted">First published in ${book.first_publish_year}</small></p>
                         <p class="card-text"><small class="text-muted">Publisher : ${book.publisher?.[0]}</small></p>
                     </div>
