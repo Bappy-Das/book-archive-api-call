@@ -27,10 +27,8 @@ const displayBook = books => {
                 Search Found ${books.numFound} Books.
             </div>
         </div>
-    
-    
-    
     `;
+
     total.appendChild(p);
     // error handling
     if (books.docs.length === 0) {
@@ -82,6 +80,9 @@ const displayBook = books => {
         display.appendChild(div);
     });
 }
-function reDirectHome() {
+
+
+
+const reDirectHome = () => {
     document.location.href = "/";
 }
