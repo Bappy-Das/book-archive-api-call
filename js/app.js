@@ -63,15 +63,15 @@ const displayBook = books => {
         div.innerHTML = `
         <div class="card">
             <div class="row g-0">
-                <div class="col-md-4 p-2 " style="height: 250px;">
-                    <img src=${cover} class="img-fluid card-img-top"  alt="...">
+                <div class="col-md-4 p-2 " >
+                    <img src=${cover} class=" card-img-top" style="height: 250px;" alt="...">
                 </div>
                 <div class="col-md-6">
                     <div class="card-body">
                         <h5 class="">${book.title}</h5>
                         <p class="card-text">By ${book.author_name}</p>
                         <p class="card-text"><small class="text-muted">First published in ${book.first_publish_year}</small></p>
-                        <p class="card-text"><small class="text-muted">Publisher : ${book.publisher[0]}</small></p>
+                        <p class="card-text"><small class="text-muted">Publisher : ${book.publisher?.[0]}</small></p>
                     </div>
                 </div>
             </div>
